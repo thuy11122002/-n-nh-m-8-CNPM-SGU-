@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;500&family=Roboto:wght@100;300;400&family=Ubuntu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assests/css/style.css">
+  <link rel="stylesheet" href="./assests/css/cart.css">
+  <link rel="stylesheet" href="./assests/css/product.css">
+  
+  <title>FFRestaurant</title>
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-left">
+        <div class="logo">
+          <a href="index.html"><img src="assests/imgnew/logo.jpg" alt=""></a>
+        </div>
+        <div class="search-box">
+          <input type="text" id="search" placeholder="Tim kiem...">
+          <i class="icon-search fas fa-search"></i>
+        </div>
+        
+      </div>
+      <div class="header-right">
+        <div class="cart">
+          <a href="javascript:void(0)" onclick="requireLogin()"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+        <i class="fas fa-user-circle icon-user"></i>
+        <span class="name-user hover-text"></span>
+        <div class="account">
+          <div class="login">
+            <span class="hover-text">Đăng nhập</span>
+          </div>
+          <div class="register hover-text">
+            <span  class=" hover-text">Đăng ký</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bảng đăng ký -->
+    <form  method="get" id="form-register">
+      <div class="board board-register active">
+        <div class="left-board">
+          <label class="title">Register</label>
+          <div class="form-input">
+            <input type="text" id="user-register" required>
+            <label class="space-tb">Username</label>
+            <span></span>
+          </div>
+          <div class="form-input">
+            <input type="text" id="full-name" required>
+            <label class="space-tb">Full Name</label>
+            <span></span>
+          </div>
+          <div class="form-input">
+            <input type="text" id="address" required>
+            <label class="space-tb">Address</label>
+            <span></span>
+          </div>
+          <div class="form-input">
+            <input type="text" id="phone-number" required>
+            <label class="space-tb">Phone Number</label>
+            <span></span>
+          </div>
+          <div class="form-input">
+            <input type="password" id="password-register" required>
+            <label class="space-tb">Password</label>
+            <span></span>
+          </div>
+          <div class="form-input">
+            <input type="password" id="re-password" required>
+            <label class="space-tb">Re-password</label>
+            <span></span>
+          </div>
+          <div class="bot-board">
+            <input type="submit" value="Sign In">
+          </div>
+          <div class="btn-close btn-register">
+            <i class="fas fa-times"></i>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- Bảng đăng nhập -->
+    <form method="get" id="form-login">
+      <div class="board board-login active">
+        <div class="left-board">
+          <label class="title">Login</label>
+          <div class="form-input">
+            <input type="text" id="user-login" required>
+            <label class="space-tb">Username</label>
+            <span></span>
+          </div>
+          <div class="form-input">
+            <input type="password" id="password-login" required>
+            <label class="space-tb">Password</label>
+            <span></span>
+          </div>
+          <div class="bot-board">
+            <input type="submit" value="Sign Up">
+            <span>
+              Bạn mới biết đến FFRestaurant
+              <a href="javascript:void(0)" onclick="changeForm()">Đăng ký</a>
+            </span>
+          </div>
+          <div class="btn-close btn-login">
+            <i class="fas fa-times"></i>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- menu -->
+    <nav>
+      <ul class="menu">
+        <li>
+          <a href="">
+            <i class="fas fa-home"></i>
+            <span>FFRestaurant</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="innerProducts('burger')">
+            <i class="fa-solid fa-burger"></i>
+            <span>Burger</span>
+          </a>
+          <div class="sub-menu">
+            <ul class="box-list">
+              <h3>Ưu đãi</h3>
+              <li>
+                <ul>
+                  <li><a href="javascript:void(0)" onclick="innerProducts('burger', '13')">Mua 3 burger Zinger tặng 1 đùi gà rán</a></li>
+                  <li><a href="javascript:void(0)" onclick="innerProducts('burger', '13PM')">Mua 1 Burger bất kì tặng 1 phần nước</a></li>
+                  <li><a href="javascript:void(0)" onclick="innerProducts('burger', '13PO')">Mua 1 phần cơm bất kì tặng 1 chai coca-cola</a></li>
+                  <li><a href="javascript:void(0)" onclick="innerProducts('burger', '13OO')">Mua combo Gà rán Zinger và cơm Gà Zinger tặng 2 chai 7up</a></li>
+                  <li><a href="javascript:void(0)" onclick="innerProducts('burger', '13MO')">Mua 1 burger Shrimp tặng 1 phần khoai tây rán</a></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><a href="javascript:void(0)" onclick="innerProducts('burger', '12')">Mua 3 loại burger khác nhau được tặng phần quà hấp dẫn</a></li>
+                  <li><a href="javascript:void(0)" onclick="innerProducts('burger', '12PM')">Mua 10 burger bất kì được tặng vourcher giảm giá 50% vé xem phim CGV</a></li>
+                  <li><a href="javascript:void(0)" onclick="innerProducts('burger', '12PO')">Mua 2 mì Gà xiên que tặng 1 chai pepsi</a></li>
+                  <li><a href="javascript:void(0)" onclick="innerProducts('burger', '12OO')">Mua 1 burger Gà và 1 bánh bí ngô được tặng vé bốc thăm</a></li>
+                  <li><a href="javascript:void(0)" onclick="innerProducts('burger', '12MO')">Mua nhiều tặng nhiều</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <div class="best-selling">
+              <h3>Bán chạy</h3>
+              <div class="box-bs">
+                <div class="image">
+                  <img src="assests/imgnew/burger/Burger-Flava.jpg" alt="">
+                </div>
+                <div class="content-inside">
+                  <h4>Burger Flava</h4>
+                  <span>90.000</span>
+                </div>
+              </div>
+              <div class="box-bs">
+                <div class="image">
+                  <img src="assests/imgnew/burger/Burger-Zinger.jpg" alt="">
+                </div>
+                <div class="content-inside">
+                  <h4>Burger Zinger</h4>
+                  <span>90.000</span>
+                </div>
+              </div>
+            </div>
+            <div class="thumbnail">
+              <img src="assests/imgnew/burger/Burger-Shrimp.jpg" alt="">
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="javascript:void(0)"  onclick="innerProducts('Chicken')">
+            <i class="fa-solid fa-drumstick-bite"></i>
+            <span>Gà rán</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="innerProducts('noodleRice')">
+            <i class="fa-solid fa-bowl-rice"></i>
+            <span>Mì và cơm</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" onclick="innerProducts('Snack')">
+            <i class="fa-solid fa-cookie"></i>
+            <span>Snack</span>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0)">
+            <i class="fa-solid fa-wine-bottle"></i>
+            <span>Đồ uống</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Container -->
+    <div class="container">
+      <!-- SlideShow -->
+      <div class="slider">
+        <div class="slideshow-container">
+  
+          <div class="mySlides fade">
+            <img src="assests/imgnew/image.jpeg" style="width:100%">
+          </div>
+        
+          <div class="mySlides fade">
+            <img src="assests/imgnew/l-intro-1642720908.jpg" style="width:100%">
+          </div>
+        
+          <div class="mySlides fade">
+            <img src="assests/imgnew/vfjhjd6tfu0trzzbvcab.webp" style="width:100%">
+          </div>
+        
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      </div>
+      <div class="innerLable">
+
+      </div>
+      <!-- Sản phẩm  -->
+      <div class="products">
+
+        <!-- Burger -->
+        <div class="lable">
+          <h1>Burger</h1>
+        </div>
+        <div class="items-phone list">
+          <!-- 1 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/burger/Burger-Flava.jpg" alt="">
+                <a href="" class="product-name">Burger Flava</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">90.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="2312PM" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/burger/Burger-Shrimp.jpg" alt="">
+                <a href="" class="product-name">Shrimp Burger</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">90.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="2813MO" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/burger/Burger-Zinger.jpg" alt="">
+                <a href="" class="product-name">Burger Zinger</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">90.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="1311PO" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gà rán -->
+        <div class="lable">
+          <h1>Gà rán</h1>
+        </div>
+        <div class="items-tablet list">
+          <!-- 1 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/Chicken/1-Fried-Chicken.jpg" alt="">
+                <a href="" class="product-name">Đùi gà chiên</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">40.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="3803IP" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/Chicken/3-HW.jpg" alt="">
+                <a href="" class="product-name">3 cánh gà chiên</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">50.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="4409IP" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/Chicken/MOD-PHI-LE-GA-QUAY.jpg" alt="">
+                <a href="" class="product-name">Gà phi lê</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">70.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="4510IP" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/Chicken/BJ.jpg" alt="">
+                <a href="" class="product-name">Đùi gà phi lê</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">75.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="4308IP" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noodle -->
+        <div class="lable">
+          <h1>Mì và cơm</h1>
+        </div>
+        <div class="items-laptop list">
+          <!-- 1 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/noodle/MY-Y-POP.jpg" alt="">
+                <a href="" class="product-name">Mỳ Ý sốt cà xúc xích chiên</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">80.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="4600MB" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/noodle/MY-Y-ZINGER.jpg" alt="">
+                <a href="" class="product-name">Mì Ý gà Zinger</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">90.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="4701MB" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/Rice/Rice-Skewer.jpg" alt="">
+                <a href="" class="product-name">Cơm gà xiên que</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">80.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="5004MB" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/Rice/Rice-Teriyaki.jpg" alt="">
+                <a href="" class="product-name">Cơm gà Teriyaki</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">100.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="5206MB" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+        </div>
+        <!-- Phụ kiện -->
+        <div class="lable">
+          <h1>Snack</h1>
+        </div>
+        <div class="items-laptop list">
+          <!-- 1 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/Snack/1-eggtart.jpg" alt="">
+                <a href="" class="product-name">Bánh trứng</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">30.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="5901LK" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/Snack/2-Pumcheese.jpg" alt="">
+                <a href="" class="product-name">2 bánh bí ngô</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">50.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="6406LK" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/Snack/2-Tenderods.jpg" alt="">
+                <a href="" class="product-name">2 xiên Tenderods</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">30.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="6305LK" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="product-item"  onclick="innerDetail(this)">
+            <div class="product-top">
+                <img  class="product-thumb" src="assests/imgnew/Snack/6-Chewy-Cheese.jpg" alt="">
+                <a href="" class="product-name">6 viên phô mai</a>
+            </div>
+            <div class="product-info">
+              <div class="product-price">60.000 VND</div>
+              <a href="javascript:void(0)" onclick="confirmation(this)" data-set="6507LK" class="buy-now">Đặt ngay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page">
+        
+      </div>
+    </div>
+    <footer class = "footer">
+      <div class="row">
+        <div class="col">
+          <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+          <ul class="footer-list">
+            <li class="footer-item">
+              <a href="" class="footer-item__link">Trung tâm trợ giúp</a>
+            </li>
+            <li class="footer-item">
+              <a href="" class="footer-item__link">Chính sách bảo hành</a>
+            </li>
+            <li class="footer-item">
+              <a href="" class="footer-item__link">Chính sách bảo mật</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3 class="footer__heading">Giới thiệu</h3>
+          <ul class="footer-list">
+            <li class="footer-item">
+              <a href="" class="footer-item__link">Giới thiệu</a>
+            </li>
+            <li class="footer-item">
+              <a href="" class="footer-item__link">Tuyển dụng</a>
+            </li>
+            <li class="footer-item">
+              <a href="" class="footer-item__link">Điều khoản</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3 class="footer__heading">Hệ thống cửa hàng</h3>
+          <ul class="footer-list">
+            <li class="footer-item">
+              <h3 class="footer-item__link">Số 18, ngõ 121, Thái Hà, Đống Đa, Hà Nội</h3>
+            </li>
+            <li class="footer-item">
+              <h3 class="footer-item__link">37 Ngõ 121 Thái Hà, Phường Trung Liệt, Quận Đống Đa</h3>
+            </li>
+            <li class="footer-item">
+              <h3 class="footer-item__link">78-80-82 Hoàng Hoa Thám, Phường 12, Quận Tân Bình</h3>
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3 class="footer__heading">Theo dõi chúng tôi</h3>
+          <ul class="footer-list">
+            <li class="footer-item">
+              <a href="" class="footer-item__link">
+                <i class="footer-item__icon fab fa-facebook-square"></i>
+                Facebook
+              </a>
+            </li>
+            <li class="footer-item">
+              <a href="" class="footer-item__link">
+                <i class="footer-item__icon fab fa-instagram"></i>
+                Instagram
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3 class="footer__heading">Hệ thống tổng đài miễn phí</h3>
+          <ul class="footer-list">
+            <li class="footer-item">
+              <h3 class="footer-item__link">Gọi mua hàng:	1800 6975</h3>
+            </li>
+            <li class="footer-item">
+              <h3 class="footer-item__link">Hỗ trợ khách hàng:	1800 6173</h3>
+            </li>
+          </ul>
+        </div>
+      </div> 
+    </footer>
+  </div>
+  <script src = "js/script.js"></script>
+  <script src = "js/cart.js"></script>
+</body>
+</html>
